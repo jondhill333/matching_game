@@ -1,5 +1,5 @@
 body {
-    background: green;
+    background: #33cccc;
     height: 95vh;
 }
 
@@ -32,7 +32,7 @@ body {
     padding: 0px 10px 0px 10px;
 }
 
-.container {
+.mainContainer {
     display: grid;
     grid-template-columns: repeat(4, 130px);
     grid-template-rows: repeat(4, 140px);
@@ -45,16 +45,19 @@ body {
 .item {
     display: grid;
     height: 100%;
-    background: yellow;
-    border: 2px solid red;
+    background:  #009900;
     text-align: center;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-
+    box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    
 }
 
-.item1 {
-
+.back {
+    border: 1px solid red;
+    
+    
 }
+
 
