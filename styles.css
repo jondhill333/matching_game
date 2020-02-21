@@ -1,0 +1,21 @@
+body {
+    background: green;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(4, 150px);
+    grid-gap: 20px;
+    justify-content: center;
+
+}
+
+.item {
+    background: yellow;
+    border: 2px solid red;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+}
+
