@@ -33,149 +33,57 @@ body {
 }
 
 .mainContainer {
-    display: grid;
+    display: flex;
+/*
     grid-template-columns: repeat(4, 130px);
     grid-template-rows: repeat(4, 140px);
     grid-gap: 20px;
+*/
     justify-content: center;
     align-content: center;
+    width: 100w;
+    height: 100vh;
 
 }
-
-
-
-/*
-.anotherContainer {
-     position: absolute; 
-     transform: translate(-50%, -50%);
-}
-*/
-
 
 .cardContainer {
-    display: grid;
-    height: 100%;
-    background:  #009900;
-    text-align: center;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
+    width: 300px;
+    height: 400px;
     box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+
     }
 
-.flip-card {
+.flipCard {
     position: relative;
+    width: 100%;
+    height: 100%;
     transform-style: preserve-3d;
+    transition: transform 1s;
 }
 
-.cardContainer:hover .flip-card {
+.cardContainer:hover .flipCard {
     transform: rotateY(180deg);
 } 
 
-.card-front .card-back {
+.cardFront, .cardBack {
     position: absolute;
-    text-align: center;
-    background:  #009900;
-    width: 40px;
-    height: 20px;
-    display: flex;
-    
-   
-    
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;  
+    justify-content: center;
+    align-content: center;
+    font-size: 2rem;
 }
-    .card-back {
+   .cardFront {
+    background:  #009900;
+}
+
+    .cardBack {
+
+    background:  #9F1B5D;
     transform: rotateY(180deg);
-        backface-visibility: hidden;
     }
 
-.card-front {
-    backface-visibility: hidden;
-    top: 40px;
-}
-
  
-/*
-    backface-visibility: hidden; 
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all 0.8s ease;
-*/
-
-
-/*
-cardContainer:hover{
-    transform: rotateY(180deg);
-}
-*/
-
-
-/*
-.item {
-    position: absolute;
-    backface-visibility: hidden;
-    overflow: hidden;
-*/
-    
-}
-
-
-
-/*
-.maincontainer2 {
-  position: absolute;
-  width: 250px;
-  height: 320px;
-  background: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-}
-*/
-
-/*
-.thecard{
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  transform-style: preserve-3d;
-  transition: all 0.8s ease;
-}
-
-.thecard:hover{
-  transform: rotateY(180deg);
-}
-
-.thefront{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  backface-visibility: hidden;
-  overflow: hidden;
-  background: #ffc728;
-  color: #000;
-}
-
-.theback{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  backface-visibility: hidden;
-  overflow: hidden;
-  background: #fafafa;
-  color: #333;
-  text-align: center;
-  transform: rotateY(180deg);
-}
-*/
-
 
