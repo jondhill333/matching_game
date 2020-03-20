@@ -42,6 +42,8 @@ body {
 
 }
 
+
+
 /*
 .anotherContainer {
      position: absolute; 
@@ -59,12 +61,39 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
-    
     }
+
+.flip-card {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.cardContainer:hover .flip-card {
+    transform: rotateY(180deg);
+} 
+
+.card-front .card-back {
+    position: absolute;
+    text-align: center;
+    background:  #009900;
+    width: 40px;
+    height: 20px;
+    display: flex;
     
-    .back {
-    border: 1px solid red; 
+   
+    
+}
+    .card-back {
+    transform: rotateY(180deg);
+        backface-visibility: hidden;
     }
+
+.card-front {
+    backface-visibility: hidden;
+    top: 40px;
+}
+
+ 
 /*
     backface-visibility: hidden; 
     position: relative;
