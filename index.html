@@ -16,40 +16,93 @@
 
 <body>
    <div class="header">
-
           <div class='title'>Matching Game</div>
           <div class='headerItems'>
               <div class='moveCounter'>10</div>
               <div class='reset'><i class="fas fa-redo"></i></div>
-          </div>
-       
+          </div>  
    </div>
 
-   <div class="mainContainer">
-       <div class="item item1"><i class="fas fa-play"></i></div>
-       <div class="item item2"><i class="fas fa-play"></i></div>
-       <div class="item item3"><i class="fas fa-play"></i></div>
-       <div class="item item4"><i class="fas fa-play"></i></div>
-       <div class="item item5"><i class="fas fa-play"></i></div>
-       <div class="item item6"><i class="fas fa-play"></i></div>
-       <div class="item item7"><i class="fas fa-play"></i></div>
-       <div class="item item8"><i class="fas fa-play"></i></div>
-       <div class="item item9"><i class="fas fa-play"></i></div>
-       <div class="item item10"><i class="fas fa-play"></i></div>
-       <div class="item item11"><i class="fas fa-play"></i></div>
-       <div class="item item12"><i class="fas fa-play"></i></div>
-       <div class="item item13"><i class="fas fa-play"></i></div>
-       <div class="item item14"><i class="fas fa-play"></i></div>
-       <div class="item item15"><i class="fas fa-play"></i></div>
-       <div class="item item16"><i class="fas fa-play"></i></div>
-   </div>
-   
+    <div class="mainContainer">
+  
+        <div class="cardContainer">
+            <div class="item item1"><i class="fas fa-play"></i></div>
+            <div></div>
+        </div>
+        <div class="cardContainer">
+            <div class="item item2"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="cardContainer">
+            <div class="item item3"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="cardContainer">
+            <div class="item item4"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="cardContainer">
+            <div class="item item5"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="cardContainer">
+            <div class="item item6"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="cardContainer">
+            <div class="item item7"><i class="fas fa-play"></i></div>
+        </div>
+         <div class="cardContainer">
+            <div class="item item8"><i class="fas fa-play"></i></div>
+        </div>
+         <div class="cardContainer">
+            <div class="item item9"><i class="fas fa-play"></i></div>
+        </div>
+         <div class="cardContainer">
+            <div class="item item10"><i class="fas fa-play"></i></div>
+        </div>
+         <div class="cardContainer">
+            <div class="item item11"><i class="fas fa-play"></i></div>
+        </div>
+         <div class="cardContainer">
+            <div class="item item12"><i class="fas fa-play"></i></div>
+        </div>
+         <div class="cardContainer">
+            <div class="item item13"><i class="fas fa-play"></i></div>
+        </div>
+         <div class="cardContainer">
+            <div class="item item14"><i class="fas fa-play"></i></div>
+         </div>
+         <div class="cardContainer">
+            <div class="item item15"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="cardContainer">
+            <div class="item item16"><i class="fas fa-play"></i></div>
+        </div>
+    </div>
+    
+    
+    
+<!--
+      <div class="maincontainer2">
+
+      <div class="thecard">
+
+        <div class="thefront"><h1>Front of Card</h1><p>This is the front of the card. It contains important information. Please see overleaf for more details.</p></div>
+
+        <div class="theback"><h1>Back of Card</h1><p>Your use of this site is subject to the terms and conditions governing this and all transactions.</p>
+        <button>Submit</button></div>
+
+      </div>
+    </div>
+-->
+
    <script>         
-    const selectedCard = document.querySelector('.item');
-    selectedCard.addEventListener('click', flip);
-
-    function flip() {
-        selectedCard.classList.toggle("back");
+    const mainContainer = document.querySelector('.mainContainer');
+    mainContainer.addEventListener('click', flip);
+   
+    function flip(e) {
+        if(e.target !== e.currentTarget) {
+            const clickedCard = e.target;
+            clickedCard.classList.toggle("back");
+//            clickedCard.removeEventListener('click', flip);
+        }
+        e.stopPropagation();
     }
 
        
