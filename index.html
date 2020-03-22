@@ -23,7 +23,7 @@
           </div>  
    </div>
 
-<!--    <div class="mainContainer">-->
+    <div class="mainContainer">
   
         <div class="cardContainer">
             <div class="flipCard">
@@ -32,22 +32,26 @@
             </div>
         </div>
         
-<!--    </div>-->
+    </div>
     
 
    <script>         
-//    const mainContainer = document.querySelector('.mainContainer');
-//    mainContainer.addEventListener('click', flip);
+//    const cardContainer = document.querySelector('.cardContainer');
+//    cardContainer.addEventListener('click', turn);
 //   
-//    function flip(e) {
+//    function turn(e) {
 //        if(e.target !== e.currentTarget) {
 //            const clickedCard = e.target;
-//            clickedCard.classList.toggle("back");
+//            clickedCard.classList.toggle("flip");
 ////            clickedCard.removeEventListener('click', flip);
 //        }
 //        e.stopPropagation();
 //    }
 
+       const cardContainer = document.querySelector(".cardContainer");
+        cardContainer.addEventListener("click", function(){
+            cardContainer.classList.toggle("flip");
+        });
        
     </script>
     
