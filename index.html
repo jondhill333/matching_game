@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="./styles.css">
   
-  <script src="https://kit.fontawesome.com/e9b7013169.js" crossorigin="anonymous"></script>
+<!--  <script src="https://kit.fontawesome.com/e9b7013169.js" crossorigin="anonymous"></script>-->
 
 </head>
 
@@ -25,9 +25,75 @@
 
     <div class="mainContainer">
   
+        <div class="cardContainer" id="card">
+            <div class="flipCard" >
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer" id="card">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
         <div class="cardContainer">
             <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-play"></i></div>
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
                 <div class="cardBack">Back</div>
             </div>
         </div>
@@ -35,24 +101,12 @@
     </div>
     
 
-   <script>         
-//    const cardContainer = document.querySelector('.cardContainer');
-//    cardContainer.addEventListener('click', turn);
-//   
-//    function turn(e) {
-//        if(e.target !== e.currentTarget) {
-//            const clickedCard = e.target;
-//            clickedCard.classList.toggle("flip");
-////            clickedCard.removeEventListener('click', flip);
-//        }
-//        e.stopPropagation();
-//    }
+    <script>         
+    const cards = Array.from(document.querySelectorAll('.cardContainer'));
+    cards.forEach(card => card.addEventListener('click', function(){
+    card.classList.toggle("flip")}));
 
-       const cardContainer = document.querySelector(".cardContainer");
-        cardContainer.addEventListener("click", function(){
-            cardContainer.classList.toggle("flip");
-        });
-       
+
     </script>
     
     
