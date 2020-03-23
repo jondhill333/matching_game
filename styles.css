@@ -39,9 +39,6 @@ body {
     grid-gap: 20px;
     justify-content: center;
     align-content: center;
-    width: 100w;
-    height: 100vh;
-
 }
 
 .cardContainer {
@@ -58,7 +55,7 @@ body {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 1s;
+    transition: transform 0.5s;
        
 }
 
@@ -71,11 +68,11 @@ body {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    display: flex;  
+    display: grid;  
     justify-content: center;
     align-content: center;
     font-size: 1rem;
-     border-radius: 15px;
+    border-radius: 15px;
 }
    .cardFront {
     background:  #009900;

@@ -10,7 +10,9 @@
 
   <link rel="stylesheet" href="./styles.css">
   
-<!--  <script src="https://kit.fontawesome.com/e9b7013169.js" crossorigin="anonymous"></script>-->
+  <script src="https://kit.fontawesome.com/e9b7013169.js" crossorigin="anonymous"></script>
+  
+  <script src="data.js"></script>
 
 </head>
 
@@ -25,13 +27,37 @@
 
     <div class="mainContainer">
   
-        <div class="cardContainer" id="card">
+        <div class="cardContainer">
             <div class="flipCard" >
+                <div class="cardFront"><p>front</p></div>
+                <div id="one" class="cardBack"></div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div id="two" class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
                 <div class="cardFront"><p>front</p></div>
                 <div class="cardBack">Back</div>
             </div>
         </div>
-        <div class="cardContainer" id="card">
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <div class="flipCard">
+                <div class="cardFront"><p>front</p></div>
+                <div class="cardBack">Back</div>
+            </div>
+        </div>
+        <div class="cardContainer">
             <div class="flipCard">
                 <div class="cardFront"><p>front</p></div>
                 <div class="cardBack">Back</div>
@@ -98,15 +124,22 @@
             </div>
         </div>
         
+        
     </div>
     
 
-    <script>         
+    <script>   
+        
+    document.getElementById("two").innerHTML = `${matchingCards.map(card => {
+        
+    card.icon
+
+    })}`;
+       
     const cards = Array.from(document.querySelectorAll('.cardContainer'));
     cards.forEach(card => card.addEventListener('click', function(){
-    card.classList.toggle("flip")}));
-
-
+        card.classList.toggle("flip")}));
+        
     </script>
     
     
