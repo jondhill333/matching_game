@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "chingu matching game project",
   "main": "index.html",
-    "engines": {
-    "node": "13.1.x"
-    
-    },
+  "engines": {
+      "node": "13.1.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.html"
@@ -23,4 +22,3 @@
   },
   "homepage": "https://github.com/jondhill333/matching_game#readme",
   }
-}
