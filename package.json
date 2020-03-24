@@ -4,7 +4,7 @@
   "description": "chingu matching game project",
   "main": "index.html",
   "scripts": {
-   "start": "node index.html"
+   "start": "node index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
 
   },
