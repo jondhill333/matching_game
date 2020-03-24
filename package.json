@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "chingu matching game project",
   "main": "index.html",
-  "scripts": {
+   "scripts": {
+    "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.html"
+    "lite": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
     "url": "https://github.com/jondhill333/matching_game/issues"
   },
   "homepage": "https://github.com/jondhill333/matching_game#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  },  
     "dependencies": {
         "minimist": ">=1.2.2"
     }
