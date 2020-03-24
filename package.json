@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "description": "chingu matching game project",
   "main": "index.html",
-  "engines": {
-      "node": "13.1.x"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.html"
-
+    "start": "npm index.html"
   },
   "repository": {
     "type": "git",
@@ -21,4 +17,7 @@
     "url": "https://github.com/jondhill333/matching_game/issues"
   },
   "homepage": "https://github.com/jondhill333/matching_game#readme",
-  }
+    "dependencies": {
+        "minimist": ">=1.2.2"
+    }
+}
