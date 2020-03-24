@@ -13,7 +13,7 @@ body {
 
 .headerItems {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 5px;
     justify-content: center;
 }
@@ -24,8 +24,18 @@ body {
 
 }
 
-.moveCounter {
+#wonMessage {
+    margin-left: 42px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: orangered;
+}
+
+button {
     padding: 0px 10px 0px 10px;
+    margin-left: 40px;
+    margin-bottom: 5px;
+    width: 100px;
 }
 
 .reset {
@@ -39,6 +49,8 @@ body {
     grid-gap: 20px;
     justify-content: center;
     align-content: center;
+    
+    @media
 }
 
 .cardContainer {
@@ -71,7 +83,7 @@ body {
     display: grid;  
     justify-content: center;
     align-content: center;
-    font-size: 1rem;
+    font-size: 2rem;
     border-radius: 15px;
 }
    .cardFront {
@@ -79,7 +91,7 @@ body {
 }
 
     .cardBack {
-
+/*    font-size: 3rem;*/
     background:  #9F1B5D;
     transform: rotateY(180deg);
     }

@@ -12,7 +12,6 @@
   
   <script src="https://kit.fontawesome.com/e9b7013169.js" crossorigin="anonymous"></script>
   
-  <script src="data.js"></script>
 
 </head>
 
@@ -20,183 +19,112 @@
    <div class="header">
           <div class='title'>Matching Game</div>
           <div class='headerItems'>
+             <span id="wonMessage"></span>
               <div class='moveCounter'></div>
-              <div class='reset'><i class="fas fa-redo"></i></div>
+              <button  id='reset'>New Game</button>
           </div>  
    </div>
 
     <div class="mainContainer">
-        <div class="cardContainer" data-framework="satellite">
+        <div class="cardContainer" data-name="satellite">
             <div class="flipCard" >
-                <div class="cardFront"><p>front</p></div>
+                <div class="cardFront"><i class="fas fa-star"></i></div>
                 <div id="one" class="cardBack"><i class='fas fa-satellite'></i></div>
             </div>
         </div>
-        <div class="cardContainer" data-framework="meteor">
+        <div class="cardContainer" data-name="bahai">
             <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
+                <div class="cardFront"><i class="fas fa-star"></i></div>
+                <div class="cardBack"><i class='fas fa-bahai'></i></div>
+            </div>
+        </div>
+        <div class="cardContainer" data-name="meteor">
+            <div class="flipCard">
+                <div class="cardFront"><i class="fas fa-star"></i></div>
                 <div id="two" class="cardBack"><i class='fas fa-meteor'></i></div>
             </div>
         </div>
-        <div class="cardContainer" data-framework="rocket">
+        <div class="cardContainer" data-name="satellite-dish">
             <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
-                <div class="cardBack"><i class='fas fa-rocket'></i></div>
-            </div>
-        </div>
-        <div class="cardContainer" data-framework="satellite-dish">
-            <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
+                <div class="cardFront"><i class="fas fa-star"></i></div>
                 <div class="cardBack"><i class='fas fa-satellite-dish'></i></div>
             </div>
         </div>
-        <div class="cardContainer" data-framework="android">
+        <div class="cardContainer" data-name="android">
             <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
+                <div class="cardFront"><i class="fas fa-star"></i></div>
                 <div class="cardBack"><i class='fab fa-android'></i></div>
             </div>
         </div>
-        <div class="cardContainer" data-framework="atom">
+        <div class="cardContainer" data-name="satellite">
             <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
-                <div class="cardBack"><i class='fas fa-atom'></i></div>
-            </div>
-        </div>
-        <div class="cardContainer" data-framework="bath">
-            <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
-                <div class="cardBack"><i class='fas fa-bath'></i></div>
-            </div>
-        </div>
-        <div class="cardContainer" data-framework="bahai">
-            <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
-                <div class="cardBack"><i class='fas fa-bahai'></i></div>
-            </div>
-        </div>
-        <div class="cardContainer" data-framework="satellite">
-            <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
+                <div class="cardFront"><i class="fas fa-star"></i></div>
                 <div class="cardBack"><i class='fas fa-satellite'></i></div>
             </div>
         </div>
-        <div class="cardContainer" data-framework="meteor">
+        <div class="cardContainer" data-name="atom">
             <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
-                <div class="cardBack"><i class='fas fa-meteor'></i></div>
-            </div>
-        </div>
-        <div class="cardContainer" data-framework="rocket">
-            <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
-                <div class="cardBack"><i class='fas fa-rocket'></i></div>
-            </div>
-        </div>
-        <div class="cardContainer" data-framework="satellite-dish">
-            <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
-                <div class="cardBack"><i class='fas fa-satellite-dish'></i></div>
-            </div>
-        </div>
-        <div class="cardContainer" data-framework="android">
-            <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
-                <div class="cardBack"><i class='fab fa-android'></i></div>
-            </div>
-        </div>
-        <div class="cardContainer" data-framework="atom">
-            <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
+                <div class="cardFront"><i class="fas fa-star"></i></div>
                 <div class="cardBack"><i class='fas fa-atom'></i></div>
             </div>
         </div>
-        <div class="cardContainer" data-framework="bath">
+        <div class="cardContainer" data-name="rocket">
             <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
+                <div class="cardFront"><i class="fas fa-star"></i></div>
+                <div class="cardBack"><i class='fas fa-rocket'></i></div>
+            </div>
+        </div>
+        <div class="cardContainer" data-name="bath">
+            <div class="flipCard">
+                <div class="cardFront"><i class="fas fa-star"></i></div>
                 <div class="cardBack"><i class='fas fa-bath'></i></div>
             </div>
         </div>
-        <div class="cardContainer" data-framework="bahai">
+        <div class="cardContainer" data-name="bahai">
             <div class="flipCard">
-                <div class="cardFront"><p>front</p></div>
+                <div class="cardFront"><i class="fas fa-star"></i></div>
                 <div class="cardBack"><i class='fas fa-bahai'></i></div>
+            </div>
+        </div>
+        <div class="cardContainer" data-name="satellite-dish">
+            <div class="flipCard">
+                <div class="cardFront"><i class="fas fa-star"></i></div>
+                <div class="cardBack"><i class='fas fa-satellite-dish'></i></div>
+            </div>
+        </div>
+        <div class="cardContainer" data-name="meteor">
+            <div class="flipCard">
+                <div class="cardFront"><i class="fas fa-star"></i></div>
+                <div class="cardBack"><i class='fas fa-meteor'></i></div>
+            </div>
+        </div>
+        <div class="cardContainer" data-name="rocket">
+            <div class="flipCard">
+                <div class="cardFront"><i class="fas fa-star"></i></div>
+                <div class="cardBack"><i class='fas fa-rocket'></i></div>
+            </div>
+        </div>
+        <div class="cardContainer" data-name="atom">
+            <div class="flipCard">
+                <div class="cardFront"><i class="fas fa-star"></i></div>
+                <div class="cardBack"><i class='fas fa-atom'></i></div>
+            </div>
+        </div>
+        <div class="cardContainer" data-name="bath">
+            <div class="flipCard">
+                <div class="cardFront"><i class="fas fa-star"></i></div>
+                <div class="cardBack"><i class='fas fa-bath'></i></div>
+            </div>
+        </div>
+        <div class="cardContainer" data-name="android">
+            <div class="flipCard">
+                <div class="cardFront"><i class="fas fa-star"></i></div>
+                <div class="cardBack"><i class='fab fa-android'></i></div>
             </div>
         </div>
     </div>
     
 
-    <script>  
-        
-    let hasFlippedCard = false;
-    let firstCard, secondCard;
-    let score = 0;
-        
-    const cards = document.querySelectorAll('.cardContainer');
-        
-    function flipCard() {
-        this.classList.add("flip")
-        
-        // if its the first card, have another go
-        if(!hasFlippedCard) {
-            hasFlippedCard = true;
-            firstCard = this;
-        } else {
-            hasFlippedCard = false;
-            secondCard = this;
-        // check for a match
-            checkMatch()
-        }
-         //if match then       
-        function checkMatch() {
-            if(firstCard.dataset.framework === secondCard.dataset.framework){
-            // leave the cards turned over
-                matchedCards()
-             // update the score
-                score++
-                console.log(score);
-            } else {
-        // if no match turn back over
-                unflipCards();
-            }
-
-        }
-        
-        function matchedCards() {
-            firstCard.removeEventListener('click', flipCard);
-            secondCard.removeEventListener('click', flipCard);
-            
-        }
-        function unflipCards() {
-            
-            setTimeout(() => {
-            firstCard.classList.remove("flip");
-            secondCard.classList.remove("flip");
-            }, 1600);
-         }
-        
-        if(score === 8){
-            newGame();
-        }
-        
-        };
-        
-        function newGame () {
-            cards.classList.remove("flip");
-            cards.forEach(card => {
-                let randomPos = Math.floor(Math.random() * 12);
-                card.style.order = randomPos;
-        })};
-        
-
-        
-        // once score gets to 8 
-        
-          //  change text of new game to "you have won .. New Game?
-            
-          // randomize positions
-            
-    cards.forEach(card => card.addEventListener('click', flipCard));
-    
-    </script>
 </body>
+<script src='./scripts.js'></script>
 </html>
