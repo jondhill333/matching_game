@@ -129,17 +129,62 @@
     
 
     <script>   
-        
-    document.getElementById("two").innerHTML = `${matchingCards.map(card => {
-        
-    card.icon
 
-    })}`;
-       
+    document.getElementById("one").innerHTML = `
+    ${matchingCards.map((card) => card.icon).join('')}`
+        
+//    const cardIcons = matchingCards.map(card => `${card.icon}`);
+//        
+//    console.log(cardIcons);
+//        
+//    const cardPack = []
+//    mixedCards = document.querySelectorAll(".cardBack");
+//    cardPack.push(mixedCards);
+//    console.log(mixedCards);
+//
+//    for(let i = 0; i <= mixedCards.length; i++) {
+//            mixedCards[i].innerHTML = matchingCards.map(card => `${card.icon}`);
+//        
+//            console.log(i);
+//            const v = mixedCards[i];
+//            console.log(v);
+//            v.innerHTML = cardIcons;
+//        };
+//        
+//    
+//    const cardPack = [];
+//    
+//    cardPack.push(mixedCards);
+//        
+//    console.log(cardPack);
+//        
+//
+//        
+//    cardPack.innerHTML = cardIcons;
+//        
+//        
+//        
+//        
+//        
+//    const pushIcons = cardPack.for(i = 0, i <= c => `${matchingCards.map(card => card.icon)}`);
+//        
+//        console.log(pushIcons);
+//        console.log(mixedCards);
+//
+//        
+//    const cardPack = []
+//    document.querySelectorAll(".cardBack").innerHTML = mixedCards;
+//        
+//    cardPack.push(mixedCards);
+//        
+//    const pushIcons = cardPack.map(c => `hello`);
+//        
+//    mixedCards.innerHTML = pushIcons ;
+         
     const cards = Array.from(document.querySelectorAll('.cardContainer'));
     cards.forEach(card => card.addEventListener('click', function(){
         card.classList.toggle("flip")}));
-        
+    
     </script>
     
     
