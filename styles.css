@@ -49,26 +49,20 @@ button {
     grid-gap: 20px;
     justify-content: center;
     align-content: center;
-    
-    @media
 }
 
 .cardContainer {
-    width: 130px;
-    height: 140px;
-/*    box-shadow: 5px 5px 5px rgba(68,68,68,0.6);*/
+    width: 100%;
+    height: 100%;
     perspective: 1000px;
-
-
-    }
+}
 
 .flipCard {
     position: relative;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.5s;
-       
+    transition: transform 0.5s; 
 }
 
 .cardContainer.flip .flipCard {
@@ -86,15 +80,40 @@ button {
     font-size: 2rem;
     border-radius: 15px;
 }
-   .cardFront {
+
+.cardFront {
     background:  #009900;
 }
 
-    .cardBack {
-/*    font-size: 3rem;*/
+.cardBack {
     background:  #9F1B5D;
     transform: rotateY(180deg);
     }
 
- 
+@media (max-width: 590px) {
+    .mainContainer {
+        grid-template-columns: repeat(4, 85px);
+        grid-template-rows: repeat(4, 93px);
+        grid-gap: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
 
+@media (max-width: 380px) {
+    .mainContainer {
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(4, 67px);
+        grid-gap: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-height: 350px) {
+    .mainContainer {
+        grid-template-columns: repeat(8, 60px);
+        grid-template-rows: repeat(2, 67px);
+        grid-gap: 10px;
+    }
+}
