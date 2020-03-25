@@ -82,6 +82,7 @@
             lockBoard = false;
             firstCard = null;
             secondCard = null;
+            wonMessage.innerHTML = ``;
         };        
             
     cards.forEach(card => card.addEventListener('click', flipCard));
