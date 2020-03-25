@@ -33,8 +33,6 @@
                 matchedCards()
 //             update the score
                 score++
-                console.log(score);
-
             } else {
         // if no match turn back over
                 unflipCards();
@@ -60,7 +58,6 @@
          }
         
         if(score === 8){
-            console.log("working");
             wonMessage.innerHTML = `YOU WON!!!`;
             }
         
@@ -80,7 +77,7 @@
                 });
             cards.forEach(x => {
                x.classList.remove("flip"); 
-            })
+            });
             hasFlippedCard = false;
             lockBoard = false;
             firstCard = null;
