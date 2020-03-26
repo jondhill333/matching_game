@@ -70,13 +70,21 @@
             firstCard = null;
             secondCard = null;
         }
-          
-        function newGame() {
-            wonMessage.innerHTML = ``;
+
+        function mixCards() {
             cards.forEach(card => {
                 let mixedCards = Math.floor(Math.random() * 12);
                 card.style.order = mixedCards;
-                });
+                }); 
+        }
+
+        (function startGame(){
+            mixCards()
+        })();
+          
+        function newGame() {
+            wonMessage.innerHTML = ``;
+            mixCards();
             cards.forEach(x => {
                x.classList.remove("flip"); 
             });
