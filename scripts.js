@@ -43,7 +43,7 @@
         function matchedCards() {
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
-            
+            newTurn()    
         }
         
         function unflipCards() {
@@ -52,9 +52,10 @@
             setTimeout(() => {
             firstCard.classList.remove("flip");
             secondCard.classList.remove("flip");
-                
-            newTurn()
+            
+            newTurn()           
             }, 1600);
+            
          }
         
         if(score === 8){
@@ -71,6 +72,7 @@
         }
           
         function newGame() {
+            wonMessage.innerHTML = ``;
             cards.forEach(card => {
                 let mixedCards = Math.floor(Math.random() * 12);
                 card.style.order = mixedCards;
@@ -78,11 +80,9 @@
             cards.forEach(x => {
                x.classList.remove("flip"); 
             });
-            hasFlippedCard = false;
-            lockBoard = false;
-            firstCard = null;
-            secondCard = null;
-            wonMessage.innerHTML = ``;
+            newTurn()
+            score = 0;
+            cards.forEach(card => card.addEventListener('click', flipCard));
         };        
             
     cards.forEach(card => card.addEventListener('click', flipCard));
