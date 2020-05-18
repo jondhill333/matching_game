@@ -14,7 +14,7 @@
         if (lockBoard) return;
         if (this === firstCard) return;
         
-        this.classList.add("flip")
+        this.classList.add("flip");
         
         // if its the first card, have another go
         if(!hasFlippedCard) {
@@ -24,7 +24,7 @@
             hasFlippedCard = false;
             secondCard = this;
         // check for a match
-            checkMatch()
+            checkMatch();
         }
          //if match then       
         function checkMatch() {
@@ -43,7 +43,6 @@
         function matchedCards() {
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
-            
         }
         
         function unflipCards() {
@@ -53,15 +52,15 @@
             firstCard.classList.remove("flip");
             secondCard.classList.remove("flip");
                 
-            newTurn()
+            newTurn();
             }, 1600);
          }
         
         if(score === 8){
-            wonMessage.innerHTML = `YOU WON!!!`;
+            wonMessage.innerHTML = 'YOU WON!!!';
             }
         
-    };
+    }
         
         function newTurn() {
             hasFlippedCard = false;
@@ -82,7 +81,7 @@
             lockBoard = false;
             firstCard = null;
             secondCard = null;
-        };        
+        }      
             
     cards.forEach(card => card.addEventListener('click', flipCard));
         
