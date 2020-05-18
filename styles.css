@@ -51,19 +51,15 @@ button {
     align-content: center;
 }
 
-.matchedCardDisplay1  {
+.matchedCardArea1  {
     border: solid 1px red;
-    height: 100%;
-    width: 100%;
     grid-column: auto;
     grid-row: 1 / -1;
     margin-right: 10px;
 }
 
-.matchedCardDisplay2  {
+.matchedCardArea2  {
     border: solid 1px red;
-    height: 100%;
-    width: 100%;
     grid-column: 6 ;
     grid-row: 1 / -1;
 }
@@ -140,4 +136,10 @@ button {
     transform: rotateY(180deg);
     }
 
+/* .matchedCards {
+    transform: translate(-150px);
+} */
 
+/* .card1 {
+    transform: translate(-150px);
+} */
