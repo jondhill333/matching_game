@@ -43,4 +43,4 @@ Thanks for your interest in contributing! Please see below for a llits of future
 - Implement star rating for how quickly the player is getting to matching all pairs
 
 ## License 
-This project is open source and available under the [MIT License](LICENSE.md).
+This project is open source and available under the [MIT License](LICENSE.md)
