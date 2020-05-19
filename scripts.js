@@ -1,13 +1,17 @@
 
     let hasFlippedCard = false;
     let lockBoard = false;
-    let firstCard, secondCard;
+    let firstCard, secondCard, firstCardLocation, secondCardLocation;
     let score = 0;
 
     let firstCardX;
     let firstCardY;
     let secondCardX;
     let secondCardY;
+    let plusOrMinus1;
+    let plusOrMinus2;
+    let plusOrMinus3;
+    let plusOrMinus4;
 
     let cards = document.querySelectorAll('.cardContainer');
     const matchedCardsArea1 = document.querySelector('.matchedCardArea1');
@@ -21,20 +25,20 @@
         if (this === firstCard) return;
         
         this.classList.add("flip");
-        // console.log(this);
         
         // if its the first card, have another go
         if(!hasFlippedCard) {
             hasFlippedCard = true;
             firstCard = this;
-            firstCardX  = firstCard.offsetTop;
-            firstCardY  = firstCard.offsetLeft;
-            // console.log({firstCardX, firstCardY});
+            firstCardX = firstCard.offsetLeft;
+            firstCardY = firstCard.offsetTop;
+
         } else {
             hasFlippedCard = false;
             secondCard = this;
-            secondCardX  = secondCard.offsetTop;
-            secondCardY  = secondCard.offsetLeft;
+            secondCardX = secondCard.offsetLeft;
+            secondCardY = secondCard.offsetTop;
+
         // check for a match
             checkMatch();
         }
@@ -42,9 +46,9 @@
         function checkMatch() {
             if(firstCard.dataset.name === secondCard.dataset.name){
             // leave the cards turned over
-                matchedCards()
+                matchedCards();
 //             update the score
-                score++
+                score++;
             } else {
         // if no match turn back over
                 unflipCards();
@@ -55,41 +59,48 @@
         function matchedCards() {
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
-            let locationX = matchedCardsArea1.offsetTop;
-            let locationY = matchedCardsArea1.offsetLeft;
-            console.log({locationX, locationY});
+
+            let locationX = matchedCardsArea1.offsetLeft;
+            let locationY = matchedCardsArea1.offsetTop;
+
             let firstCardmoveX = firstCardX - locationX;
-            let firstCardmoveY = firstCardY - locationY;
+            let firstCardmoveY = firstCardY - locationY ;
+
             let secondCardmoveX = secondCardX - locationX;
             let secondCardmoveY = secondCardY - locationY;
+
+
+            if(firstCardmoveX <= 0) {
+                plusOrMinus1 = '';
+            } else {
+                plusOrMinus1 = '-';
+            }
+
+            if(firstCardmoveY <= 0) {
+                plusOrMinus2 = '';
+            } else {
+                plusOrMinus2 = '-';
+            }
+
+            if(secondCardmoveX <= 0) {
+                plusOrMinus3 = '';
+            } else {
+                plusOrMinus3 = '-';
+            }  
+            
+            if(secondCardmoveY <= 0) {
+                plusOrMinus4 = '';
+            } else {
+                plusOrMinus4 = '-';
+            }
+
             setTimeout(() => {
 
+                firstCard.style.transform = `translate(${plusOrMinus1}${firstCardmoveX.toString()}px, ${plusOrMinus2}${firstCardmoveY.toString()}px)` ;
+                secondCard.style.transform = `translate(${plusOrMinus3}${secondCardmoveX.toString()}px, ${plusOrMinus4}${secondCardmoveY.toString()}px)` ;
 
-
-                firstCard.style.transform = `translate(-${firstCardmoveY}px, -${firstCardmoveX}px)` ;
-                secondCard.style.transform = `translate(-${secondCardmoveY}px, -${secondCardmoveX}px)` ;
-                // firstCard.style.transform = `translate(-100px, 50px)` ;
-                // secondCard.style.transform = `translate(-100px, 50px)` ;
-                console.log({firstCardmoveX, firstCardmoveY});
-
-
-
-
+                console.log({ plusOrMinus1, firstCardmoveX, plusOrMinus2, firstCardmoveY, plusOrMinus3, secondCardmoveX, plusOrMinus4, secondCardmoveY })
             }, 1000);
-
-
-
-            // move cards to side section
-                // define where are the side sections
-                // how to esnure the card knows where the new location is
-                // work out where in the side section the cards need to go relative to how many other pairs are there
-                    // need to increment the where it moves
-                    // need to know when enough space and go to next section
-                // offset the cards slightly so there is a little bit of overlap
-
-                // set a timeout for the move
-
-                    //side one, get a little movement when is correct
 
         }
         
@@ -130,15 +141,9 @@
             firstCard = null;
             secondCard = null;
         }      
-        
-        // function handleClick(e) {
-        //     console.log(e);
-        // }
 
             
     cards.forEach(card => card.addEventListener('click', flipCard));
-
-    // document.addEventListener('click', handleClick);
         
     resetButton.addEventListener("click", newGame);
         
