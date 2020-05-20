@@ -99,8 +99,6 @@
                         `translate(${firstCardmoveX}px, ${firstCardmoveY}px) rotateY(360deg)` ;
                     secondCard.style.transform = 
                         `translate(${secondCardmoveX}px, ${secondCardmoveY}px) rotateY(360deg)`;
-
-
             }, 1000);
         }
 
@@ -115,9 +113,9 @@
             }, 1600);
          }
         
-        if(score === 8){
+        if(score === 8) {
             wonMessage.innerHTML = 'YOU WON!!!';
-            }
+        }
         
     }
         
@@ -130,25 +128,27 @@
           
         function newGame() {
             cards.forEach(card => {
+                card.removeAttribute('style');
+            });
+            cards.forEach(card => {
                 let mixedCards = Math.floor(Math.random() * 12);
                 card.style.order = mixedCards;
                 });
             cards.forEach(x => {
                x.classList.remove("flip"); 
             });
+
             hasFlippedCard = false;
             lockBoard = false;
             firstCard = null;
             secondCard = null;
+            inc = -145;
+            score = 0;
+
+            cards.forEach(card => card.addEventListener('click', flipCard));
         }      
 
-        const test = document.querySelector(".matchedCardArea2");
-
-        test.getBoundingClientRect();
-
-        console.log(test.top);
-
-            
+  
     cards.forEach(card => card.addEventListener('click', flipCard));
         
     resetButton.addEventListener("click", newGame);
