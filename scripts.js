@@ -9,14 +9,9 @@
     let firstCardY;
     let secondCardX;
     let secondCardY;
-    let plusOrMinus1;
-    let plusOrMinus2;
-    let plusOrMinus3;
-    let plusOrMinus4;
 
     let firstCardmoveX;
     let firstCardmoveY;
-
     let secondCardmoveX;
     let secondCardmoveY;
 
@@ -45,6 +40,7 @@
         if(!hasFlippedCard) {
             hasFlippedCard = true;
             firstCard = this;
+            console.log(this);
             firstCardX = firstCard.offsetLeft;
             firstCardY = firstCard.offsetTop;
             // console.log({firstCardY});
@@ -99,8 +95,10 @@
             }
 
             setTimeout(() => {
-                    firstCard.style.transform = `translate(${firstCardmoveX}px, ${firstCardmoveY}px)` ;
-                    secondCard.style.transform = `translate(${secondCardmoveX}px, ${secondCardmoveY}px)`;
+                    firstCard.style.transform = 
+                        `translate(${firstCardmoveX}px, ${firstCardmoveY}px) rotateY(360deg)` ;
+                    secondCard.style.transform = 
+                        `translate(${secondCardmoveX}px, ${secondCardmoveY}px) rotateY(360deg)`;
 
 
             }, 1000);
