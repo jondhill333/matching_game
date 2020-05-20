@@ -1,6 +1,7 @@
 body {
     background: #33cccc;
     height: 95vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
@@ -8,6 +9,7 @@ body {
     padding: 10px;
     margin: 20px;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -16,31 +18,42 @@ body {
     flex-direction: column;
     padding: 5px;
     justify-content: center;
+    align-items: center;
 }
 
 .title {
     font-size: 30px;
-    font-weight: 400;
-
+    font-weight: 50;
+    color: darkgreen;
 }
 
 #wonMessage {
-    margin-left: 42px;
     margin-bottom: 5px;
     font-weight: 700;
     color: orangered;
 }
 
-button {
-    padding: 0px 10px 0px 10px;
-    margin-left: 40px;
+.newGamebutton {
     margin-bottom: 5px;
-    width: 100px;
+    padding: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 3px;
+    background: blue;
+    color: white;
+    cursor: pointer;
 }
 
-.reset {
-    padding: 0px 10px 0px 10px;
+/* .newGamebutton:hover {
+    transform: scale(0.9);
+    transition: transform 0.1s;
+} */
+
+.newGamebutton:active {
+    transform: scale(0.6);
+    transition: transform 1s;
 }
+
+
 
 .mainContainer {
     display: grid;

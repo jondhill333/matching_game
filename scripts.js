@@ -35,38 +35,27 @@
         if (this === firstCard) return;
         
         this.classList.add("flip");
-        
-        // if its the first card, have another go
+
         if(!hasFlippedCard) {
             hasFlippedCard = true;
             firstCard = this;
             console.log(this);
             firstCardX = firstCard.offsetLeft;
             firstCardY = firstCard.offsetTop;
-            // console.log({firstCardY});
-
         } else {
             hasFlippedCard = false;
             secondCard = this;
             secondCardX = secondCard.offsetLeft;
             secondCardY = secondCard.offsetTop;
-            // console.log({secondCardY});
-
-        // check for a match
             checkMatch();
         }
-         //if match then       
+     
         function checkMatch() {
             if(firstCard.dataset.name === secondCard.dataset.name){
-            // leave the cards turned over
                 matchedCards();
-//             update the score
-
             } else {
-        // if no match turn back over
                 unflipCards();
             }
-
         }
 
         function matchedCards() {
@@ -104,19 +93,18 @@
 
         function unflipCards() {
             lockBoard = true;
-            
             setTimeout(() => {
             firstCard.classList.remove("flip");
             secondCard.classList.remove("flip");
-                
             newTurn();
             }, 1600);
          }
         
         if(score === 8) {
+            setTimeout(() => {
             wonMessage.innerHTML = 'YOU WON!!!';
+            }, 1500);
         }
-        
     }
         
         function newTurn() {
@@ -127,6 +115,7 @@
         }
           
         function newGame() {
+            wonMessage.innerHTML = '';
             cards.forEach(card => {
                 card.removeAttribute('style');
             });
@@ -137,14 +126,12 @@
             cards.forEach(x => {
                x.classList.remove("flip"); 
             });
-
             hasFlippedCard = false;
             lockBoard = false;
             firstCard = null;
             secondCard = null;
             inc = -145;
             score = 0;
-
             cards.forEach(card => card.addEventListener('click', flipCard));
         }      
 
