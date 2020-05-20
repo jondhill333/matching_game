@@ -1,8 +1,9 @@
 
     let hasFlippedCard = false;
     let lockBoard = false;
-    let firstCard, secondCard, firstCardLocation, secondCardLocation;
+    let firstCard, secondCard, locationX, locationY;
     let score = 0;
+    let inc = -145;
 
     let firstCardX;
     let firstCardY;
@@ -13,9 +14,23 @@
     let plusOrMinus3;
     let plusOrMinus4;
 
+    let firstCardmoveX;
+    let firstCardmoveY;
+
+    let secondCardmoveX;
+    let secondCardmoveY;
+
+
     let cards = document.querySelectorAll('.cardContainer');
-    const matchedCardsArea1 = document.querySelector('.matchedCardArea1');
-        
+    const matchedCardArea1 = document.querySelector('.matchedCardArea1');
+    const matchedCardArea2 = document.querySelector('.matchedCardArea2');
+
+    const cardArea1X = matchedCardArea1.offsetLeft;
+    const cardArea1Y = matchedCardArea1.offsetTop ;
+
+    const cardArea2X = matchedCardArea2.offsetLeft;
+    const cardArea2Y = matchedCardArea2.offsetTop ;
+
     const resetButton = document.getElementById("reset");
         
     let wonMessage = document.getElementById("wonMessage");
@@ -32,12 +47,14 @@
             firstCard = this;
             firstCardX = firstCard.offsetLeft;
             firstCardY = firstCard.offsetTop;
+            // console.log({firstCardY});
 
         } else {
             hasFlippedCard = false;
             secondCard = this;
             secondCardX = secondCard.offsetLeft;
             secondCardY = secondCard.offsetTop;
+            // console.log({secondCardY});
 
         // check for a match
             checkMatch();
@@ -48,62 +65,47 @@
             // leave the cards turned over
                 matchedCards();
 //             update the score
-                score++;
+
             } else {
         // if no match turn back over
                 unflipCards();
             }
 
         }
-        
+
         function matchedCards() {
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
+            score++;
+            inc = inc + 145;
+            console.log(score);
 
-            let locationX = matchedCardsArea1.offsetLeft;
-            let locationY = matchedCardsArea1.offsetTop;
-
-            let firstCardmoveX = firstCardX - locationX;
-            let firstCardmoveY = firstCardY - locationY ;
-
-            let secondCardmoveX = secondCardX - locationX;
-            let secondCardmoveY = secondCardY - locationY;
-
-
-            if(firstCardmoveX <= 0) {
-                plusOrMinus1 = '';
+            if (score < 5) {
+                firstCardmoveX = cardArea1X - firstCardX;
+                firstCardmoveY = (cardArea1Y + inc) - firstCardY;
+                secondCardmoveX = cardArea1X - secondCardX;
+                secondCardmoveY = (cardArea1Y + inc) - secondCardY; 
+            } else if (score === 5 ) {
+                inc = 0;
+                firstCardmoveX = cardArea2X - firstCardX;
+                firstCardmoveY = (cardArea2Y + inc) - firstCardY;
+                secondCardmoveX = cardArea2X - secondCardX;
+                secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
             } else {
-                plusOrMinus1 = '-';
-            }
-
-            if(firstCardmoveY <= 0) {
-                plusOrMinus2 = '';
-            } else {
-                plusOrMinus2 = '-';
-            }
-
-            if(secondCardmoveX <= 0) {
-                plusOrMinus3 = '';
-            } else {
-                plusOrMinus3 = '-';
-            }  
-            
-            if(secondCardmoveY <= 0) {
-                plusOrMinus4 = '';
-            } else {
-                plusOrMinus4 = '-';
+                firstCardmoveX = cardArea2X - firstCardX;
+                firstCardmoveY = (cardArea2Y + inc) - firstCardY;
+                secondCardmoveX = cardArea2X - secondCardX;
+                secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
             }
 
             setTimeout(() => {
+                    firstCard.style.transform = `translate(${firstCardmoveX}px, ${firstCardmoveY}px)` ;
+                    secondCard.style.transform = `translate(${secondCardmoveX}px, ${secondCardmoveY}px)`;
 
-                firstCard.style.transform = `translate(${plusOrMinus1}${firstCardmoveX.toString()}px, ${plusOrMinus2}${firstCardmoveY.toString()}px)` ;
-                secondCard.style.transform = `translate(${plusOrMinus3}${secondCardmoveX.toString()}px, ${plusOrMinus4}${secondCardmoveY.toString()}px)` ;
 
-                console.log({ plusOrMinus1, firstCardmoveX, plusOrMinus2, firstCardmoveY, plusOrMinus3, secondCardmoveX, plusOrMinus4, secondCardmoveY })
             }, 1000);
-
         }
-        
+
         function unflipCards() {
             lockBoard = true;
             
@@ -141,6 +143,12 @@
             firstCard = null;
             secondCard = null;
         }      
+
+        const test = document.querySelector(".matchedCardArea2");
+
+        test.getBoundingClientRect();
+
+        console.log(test.top);
 
             
     cards.forEach(card => card.addEventListener('click', flipCard));
