@@ -68,18 +68,18 @@
             if (score < 5) {
                 firstCardmoveX = cardArea1X - firstCardX;
                 firstCardmoveY = (cardArea1Y + inc) - firstCardY;
-                secondCardmoveX = cardArea1X - secondCardX;
+                secondCardmoveX = (cardArea1X + 10) - secondCardX;
                 secondCardmoveY = (cardArea1Y + inc) - secondCardY; 
             } else if (score === 5 ) {
                 inc = 0;
                 firstCardmoveX = cardArea2X - firstCardX;
                 firstCardmoveY = (cardArea2Y + inc) - firstCardY;
-                secondCardmoveX = cardArea2X - secondCardX;
+                secondCardmoveX = (cardArea2X - 10) - secondCardX;
                 secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
             } else {
                 firstCardmoveX = cardArea2X - firstCardX;
                 firstCardmoveY = (cardArea2Y + inc) - firstCardY;
-                secondCardmoveX = cardArea2X - secondCardX;
+                secondCardmoveX = (cardArea2X - 10) - secondCardX;
                 secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
             }
 
@@ -103,7 +103,7 @@
         if(score === 8) {
             setTimeout(() => {
             wonMessage.innerHTML = 'YOU WON!!!';
-            }, 1500);
+            }, 1800);
         }
     }
         
