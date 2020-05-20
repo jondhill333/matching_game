@@ -1,11 +1,36 @@
 
     let hasFlippedCard = false;
     let lockBoard = false;
-    let firstCard, secondCard;
+    let firstCard, secondCard, locationX, locationY;
     let score = 0;
-        
+    let inc = -145;
+
+    let firstCardX;
+    let firstCardY;
+    let secondCardX;
+    let secondCardY;
+    let plusOrMinus1;
+    let plusOrMinus2;
+    let plusOrMinus3;
+    let plusOrMinus4;
+
+    let firstCardmoveX;
+    let firstCardmoveY;
+
+    let secondCardmoveX;
+    let secondCardmoveY;
+
+
     let cards = document.querySelectorAll('.cardContainer');
-        
+    const matchedCardArea1 = document.querySelector('.matchedCardArea1');
+    const matchedCardArea2 = document.querySelector('.matchedCardArea2');
+
+    const cardArea1X = matchedCardArea1.offsetLeft;
+    const cardArea1Y = matchedCardArea1.offsetTop ;
+
+    const cardArea2X = matchedCardArea2.offsetLeft;
+    const cardArea2Y = matchedCardArea2.offsetTop ;
+
     const resetButton = document.getElementById("reset");
         
     let wonMessage = document.getElementById("wonMessage");
@@ -20,9 +45,17 @@
         if(!hasFlippedCard) {
             hasFlippedCard = true;
             firstCard = this;
+            firstCardX = firstCard.offsetLeft;
+            firstCardY = firstCard.offsetTop;
+            // console.log({firstCardY});
+
         } else {
             hasFlippedCard = false;
             secondCard = this;
+            secondCardX = secondCard.offsetLeft;
+            secondCardY = secondCard.offsetTop;
+            // console.log({secondCardY});
+
         // check for a match
             checkMatch();
         }
@@ -30,21 +63,49 @@
         function checkMatch() {
             if(firstCard.dataset.name === secondCard.dataset.name){
             // leave the cards turned over
-                matchedCards()
+                matchedCards();
 //             update the score
-                score++
+
             } else {
         // if no match turn back over
                 unflipCards();
             }
 
         }
-        
+
         function matchedCards() {
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
+            score++;
+            inc = inc + 145;
+            console.log(score);
+
+            if (score < 5) {
+                firstCardmoveX = cardArea1X - firstCardX;
+                firstCardmoveY = (cardArea1Y + inc) - firstCardY;
+                secondCardmoveX = cardArea1X - secondCardX;
+                secondCardmoveY = (cardArea1Y + inc) - secondCardY; 
+            } else if (score === 5 ) {
+                inc = 0;
+                firstCardmoveX = cardArea2X - firstCardX;
+                firstCardmoveY = (cardArea2Y + inc) - firstCardY;
+                secondCardmoveX = cardArea2X - secondCardX;
+                secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
+            } else {
+                firstCardmoveX = cardArea2X - firstCardX;
+                firstCardmoveY = (cardArea2Y + inc) - firstCardY;
+                secondCardmoveX = cardArea2X - secondCardX;
+                secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
+            }
+
+            setTimeout(() => {
+                    firstCard.style.transform = `translate(${firstCardmoveX}px, ${firstCardmoveY}px)` ;
+                    secondCard.style.transform = `translate(${secondCardmoveX}px, ${secondCardmoveY}px)`;
+
+
+            }, 1000);
         }
-        
+
         function unflipCards() {
             lockBoard = true;
             
@@ -82,6 +143,13 @@
             firstCard = null;
             secondCard = null;
         }      
+
+        const test = document.querySelector(".matchedCardArea2");
+
+        test.getBoundingClientRect();
+
+        console.log(test.top);
+
             
     cards.forEach(card => card.addEventListener('click', flipCard));
         
