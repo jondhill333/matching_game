@@ -2,9 +2,11 @@
 
 ## Overview
 
-This project was taken on as my solo project for my first chingu voyage. Its tier 2. I chose this as it is a good way to put the skills I have learned into practice the skills with a simple, interactive application
+This project was taken on as my solo project for my first [Chingu](https://www.chingu.io/) voyage - its tier 2. I chose this as it is a good way to put the skills I have learned into practice with a simple, interactive application
 
-Players can click or tap on each card to flip it over.There are 8 pairs of matching cards. If the cards match they stay flipped over,if they aren’t they flip back. Once the player has discovered all 8 pairs, they get the “YOU WON” Message
+Players can click or tap on each card to flip it over.There are 8 pairs of matching cards. If the cards match they stay flipped over, if they aren’t they flip back. Once the player has discovered all 8 pairs, they get the “YOU WON” Message
+
+[See the app here](https://jondhill333.github.io/matching_game/)
 
 ## Tech stacks 
 
@@ -29,14 +31,12 @@ To run the app locally, clone the repo and install the app using:
 
 
 ## Contributing 
-Thanks for your interest in contributing! Please see below for a llits of future planned changes
+Thanks for your interest in contributing - please see below for a list of planned changes
 
 
  ## Further extensions:
 
-- Re-vamp the styles – colors, icons, fonts etc
-
-- Build space to the side, where matched cards slide to once they are matched
+ - Change "you won" message to display in centre of screen
 
 - Implement move counter
 
