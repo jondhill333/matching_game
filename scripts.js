@@ -23,7 +23,7 @@
     const cardArea1X = matchedCardArea1.offsetLeft;
     const cardArea1Y = matchedCardArea1.offsetTop ;
 
-    const cardArea2X = matchedCardArea2.offsetLeft;
+    const cardArea2X = matchedCardArea2.offsetLeft + 10;
     const cardArea2Y = matchedCardArea2.offsetTop ;
 
     const resetButton = document.getElementById("reset");
@@ -39,7 +39,6 @@
         if(!hasFlippedCard) {
             hasFlippedCard = true;
             firstCard = this;
-            console.log(this);
             firstCardX = firstCard.offsetLeft;
             firstCardY = firstCard.offsetTop;
         } else {
@@ -63,32 +62,37 @@
             secondCard.removeEventListener('click', flipCard);
             score++;
             inc = inc + 145;
-            console.log(score);
 
-            if (score < 5) {
-                firstCardmoveX = cardArea1X - firstCardX;
-                firstCardmoveY = (cardArea1Y + inc) - firstCardY;
-                secondCardmoveX = (cardArea1X + 10) - secondCardX;
-                secondCardmoveY = (cardArea1Y + inc) - secondCardY; 
-            } else if (score === 5 ) {
-                inc = 0;
-                firstCardmoveX = cardArea2X - firstCardX;
-                firstCardmoveY = (cardArea2Y + inc) - firstCardY;
-                secondCardmoveX = (cardArea2X - 10) - secondCardX;
-                secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
+            if (window.matchMedia("(min-width: 750px)").matches) { 
+
+                if (score < 5) {
+                    firstCardmoveX = cardArea1X - firstCardX;
+                    firstCardmoveY = (cardArea1Y + inc) - firstCardY;
+                    secondCardmoveX = (cardArea1X + 10) - secondCardX;
+                    secondCardmoveY = (cardArea1Y + inc) - secondCardY; 
+                } else if (score === 5 ) {
+                    inc = 0;
+                    firstCardmoveX = cardArea2X - firstCardX;
+                    firstCardmoveY = (cardArea2Y + inc) - firstCardY;
+                    secondCardmoveX = (cardArea2X - 10) - secondCardX;
+                    secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
+                } else {
+                    firstCardmoveX = cardArea2X - firstCardX;
+                    firstCardmoveY = (cardArea2Y + inc) - firstCardY;
+                    secondCardmoveX = (cardArea2X - 10) - secondCardX;
+                    secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
+                }
+
+                setTimeout(() => {
+                        firstCard.style.transform = 
+                            `translate(${firstCardmoveX}px, ${firstCardmoveY}px) rotateY(360deg)` ;
+                        secondCard.style.transform = 
+                            `translate(${secondCardmoveX}px, ${secondCardmoveY}px) rotateY(360deg)`;
+                }, 1000);
             } else {
-                firstCardmoveX = cardArea2X - firstCardX;
-                firstCardmoveY = (cardArea2Y + inc) - firstCardY;
-                secondCardmoveX = (cardArea2X - 10) - secondCardX;
-                secondCardmoveY = (cardArea2Y + inc) - secondCardY; 
-            }
+                return;
 
-            setTimeout(() => {
-                    firstCard.style.transform = 
-                        `translate(${firstCardmoveX}px, ${firstCardmoveY}px) rotateY(360deg)` ;
-                    secondCard.style.transform = 
-                        `translate(${secondCardmoveX}px, ${secondCardmoveY}px) rotateY(360deg)`;
-            }, 1000);
+            }
         }
 
         function unflipCards() {
@@ -143,8 +147,7 @@
             cards.forEach(card => card.addEventListener('click', flipCard));
         }      
 
-  
     cards.forEach(card => card.addEventListener('click', flipCard));
-        
+
     resetButton.addEventListener("click", newGame);
         
