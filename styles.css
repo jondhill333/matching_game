@@ -61,12 +61,60 @@ body {
     grid-column: auto;
     grid-row: 1 / -1;
     margin-right: 10px;
+    border: solid red 1px;
 }
 
 .matchedCardArea2  {
     grid-column: 6 ;
     grid-row: 1 / -1;
+    border: solid red 1px;
 }
+
+@media (max-width: 750px) {
+    .mainContainer {
+        grid-template-columns: repeat(4, 85px);
+        grid-template-rows: repeat(6, 93px);
+        grid-gap: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .matchedCardArea1  {
+        grid-column: 1 / -1;
+        grid-row: 5 ;
+        margin-top: 10px;
+        margin-right: 0px;
+    }
+    
+    .matchedCardArea2  {
+        grid-column: 1 / -1 ;
+        grid-row: 6;
+        margin-top: 10px;
+    }
+}
+
+ @media (max-width: 380px) {
+    .mainContainer {
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(6, 67px);
+        grid-gap: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .matchedCardArea1  {
+        grid-column: 1 / -1;
+        grid-row: 5 ;
+        margin-top: 10px;
+        border: solid red 1 px;
+    }
+    
+    .matchedCardArea2  {
+        grid-column: 1 / -1 ;
+        grid-row: 6;
+        margin-top: 10px;
+        border: solid red 1 px;
+    }
+}
+
 
 .cardContainer {
     width: 100%;
