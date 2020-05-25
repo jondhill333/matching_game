@@ -58,6 +58,7 @@
         }
 
         function matchedCards() {
+            lockBoard = true;
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
             score++;
@@ -88,11 +89,13 @@
                             `translate(${firstCardmoveX}px, ${firstCardmoveY}px) rotateY(360deg)` ;
                         secondCard.style.transform = 
                             `translate(${secondCardmoveX}px, ${secondCardmoveY}px) rotateY(360deg)`;
+                            newTurn();
                 }, 1000);
             } else {
                 return;
 
             }
+           
         }
 
         function unflipCards() {
@@ -117,23 +120,29 @@
             firstCard = null;
             secondCard = null;
         }
+
+        function mixCards() {
+            cards.forEach(card => {
+                let mixedCards = Math.floor(Math.random() * 12);
+                card.style.order = mixedCards;
+                }); 
+        }
+
+        (function startGame(){
+            mixCards();
+        })();
           
         function newGame() {
             wonMessage.innerHTML = '';
             cards.forEach(card => {
                 card.removeAttribute('style');
             });
-            cards.forEach(card => {
-                let mixedCards = Math.floor(Math.random() * 12);
-                card.style.order = mixedCards;
-                });
+
             cards.forEach(x => {
                x.classList.remove("flip"); 
             });
-            hasFlippedCard = false;
-            lockBoard = false;
-            firstCard = null;
-            secondCard = null;
+            mixCards();
+            newTurn();
             inc = -145;
             score = 0;
             firstCardX = null;

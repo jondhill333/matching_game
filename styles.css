@@ -22,7 +22,7 @@ body {
 
 .title {
     font-size: 30px;
-    font-weight: 50;
+    font-weight: 500;
     color: darkgreen;
 }
 
@@ -37,7 +37,7 @@ body {
     padding: 5px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     border-radius: 3px;
-    background: blue;
+    background: #3F57C0;
     color: white;
     cursor: pointer;
 }
@@ -140,7 +140,7 @@ body {
 }
 
 .cardBack {
-    background:  #9F1B5D;
+    background:  #C03F57;
     transform: rotateY(180deg);
     border: 1px solid black;
 }
