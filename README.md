@@ -1,38 +1,46 @@
-1.    Title — What isyour app/project called?
+# Matching Game
 
-Matching Game
+## Overview
 
-2.    Overview — Why didyou start this project?
+This project was taken on as my solo project for my first chingu voyage. Its tier 2. I chose this as it is a good way to put the skills I have learned into practice the skills with a simple, interactive application
 
-This project was taken on as my solo project for my firstchingu voyage. Its tier 2. I chose this and it seemed like a good way to put theskills I have learned into practice the skills with a simple, interactiveapplication
+Players can click or tap on each card to flip it over.There are 8 pairs of matching cards. If the cards match they stay flipped over,if they aren’t they flip back. Once the player has discovered all 8 pairs, they get the “YOU WON” Message
+
+## Tech stacks 
+
+* Vanilla JS
+* CSS
+* HTML
+* Font-awesome
+
+## Setup
+
+To run the app locally, clone the repo and install the app using: 
+
+```
+  $ git clone https://github.com/jondhill333/matching_game.git
+  $ cd matching_game
+  $ npm install 
+  $ npm start
+```
+## Contributors 
+
+- Solo prject by [JonHill](https://github.com/jondhill333)
 
 
-3.    Features — Whatare some key things your project can do?
+## Contributing 
+Thanks for your interest in contributing! Please see below for a llits of future planned changes
 
-Players can click or tap on each card to flip it over.There are 8 pairs of matching cards. If the cards match they stay flipped over,if they aren’t they flip back. Once the player has discovered all 8 pairs, theyget the “YOU WON” Message
 
-4.    Running theproject — How could someone else get your code working for them?
-
-You should be fairly easy, just clone the repo fromGithub, cd into the correct folder and npm start (or yarn) and that’s it.
-
-5.    Dependencies —What are the main outside resources your project needs to run?
-
-Font-awesome
-
-6 . To do list
-
-- At the time of submission on 24.03, I plan to make thefollowing adjustments:
-
-- Refactor the code to be cleaner
-
-- Update the code comments to be clearer
+ ## Further extensions:
 
 - Re-vamp the styles – colors, icons, fonts etc
 
-Also further extensions:
+- Build space to the side, where matched cards slide to once they are matched
 
-- Build space to the side, where matched cards slide to oncethey are matched, to practice      implementing more css animations
+- Implement move counter
 
-- Implement move counterImplement star rating for how quickly the player isgetting to matching all pairs
+- Implement star rating for how quickly the player is getting to matching all pairs
 
-- Create a whole new version of the app using React - to practice React
+## License 
+This project is open source and available under the [MIT License](LICENSE.md)

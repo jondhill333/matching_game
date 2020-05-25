@@ -1,16 +1,11 @@
 <!doctype html>
 
-
 <html lang="en">
 <head>
-   
     <meta charset="utf-8">
-
     <title>Matching Game</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-
-  scalable=yes"> 
+    <meta name="Jon Hill" content="card-matching-game">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
     
     <link rel="stylesheet" href="./styles.css">
 
@@ -20,111 +15,113 @@
 
 <body>
    <div class="header">
-          <div class='title'>Matching Game</div>
+          <div class='title'>MATCHING GAME</div>
           <div class='headerItems'>
-             <span id="wonMessage"></span>
-              <div class='moveCounter'></div>
-              <button  id='reset'>New Game</button>
+            <div id="wonMessage"></div>
+            <div  class='newGamebutton' id='reset'>New Game</div>
           </div>  
    </div>
 
     <div class="mainContainer">
-       
-        <div class="cardContainer" data-name="satellite">
-            <div class="flipCard" >
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-satellite'></i></div>
-            </div>
+        <div class='matchedCardArea1'>
         </div>
-        <div class="cardContainer" data-name="bahai">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-bahai'></i></div>
+            <div class="cardContainer card1" data-name="satellite">
+                <div class="flipCard" >
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-satellite'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="meteor">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div id="two" class="cardBack"><i class='fas fa-meteor'></i></div>
+            <div class="cardContainer card2" data-name="bahai">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-bahai'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="satellite-dish">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-satellite-dish'></i></div>
+            <div class="cardContainer card3" data-name="meteor">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div id="two" class="cardBack"><i class='fas fa-meteor'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="android">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fab fa-android'></i></div>
+            <div class="cardContainer card4" data-name="satellite-dish">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-satellite-dish'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="satellite">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-satellite'></i></div>
+            <div class="cardContainer card5" data-name="android">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fab fa-android'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="atom">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-atom'></i></div>
+            <div class="cardContainer card6" data-name="satellite">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-satellite'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="rocket">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-rocket'></i></div>
+            <div class="cardContainer card7" data-name="atom">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-atom'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="bath">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-bath'></i></div>
+            <div class="cardContainer card8" data-name="rocket">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-rocket'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="bahai">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-bahai'></i></div>
+            <div class="cardContainer card9" data-name="bath">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-bath'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="satellite-dish">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-satellite-dish'></i></div>
+            <div class="cardContainer card10" data-name="bahai">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-bahai'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="meteor">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-meteor'></i></div>
+            <div class="cardContainer card11" data-name="satellite-dish">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-satellite-dish'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="rocket">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-rocket'></i></div>
+            <div class="cardContainer card12" data-name="meteor">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-meteor'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="atom">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-atom'></i></div>
+            <div class="cardContainer card13" data-name="rocket">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-rocket'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="bath">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fas fa-bath'></i></div>
+            <div class="cardContainer card14" data-name="atom">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-atom'></i></div>
+                </div>
             </div>
-        </div>
-        <div class="cardContainer" data-name="android">
-            <div class="flipCard">
-                <div class="cardFront"><i class="fas fa-star"></i></div>
-                <div class="cardBack"><i class='fab fa-android'></i></div>
+            <div class="cardContainer card15" data-name="bath">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fas fa-bath'></i></div>
+                </div>
             </div>
+            <div class="cardContainer card16" data-name="android">
+                <div class="flipCard">
+                    <div class="cardFront"><i class="fas fa-star"></i></div>
+                    <div class="cardBack"><i class='fab fa-android'></i></div>
+                </div>
+            </div>
+        <div class='matchedCardArea2'>
         </div>
         
     </div>
