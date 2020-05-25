@@ -43,17 +43,10 @@ body {
     cursor: pointer;
 }
 
-/* .newGamebutton:hover {
-    transform: scale(0.9);
-    transition: transform 0.1s;
-} */
-
 .newGamebutton:active {
     transform: scale(0.6);
     transition: transform 1s;
 }
-
-
 
 .mainContainer {
     display: grid;

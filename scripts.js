@@ -1,7 +1,7 @@
 
     let hasFlippedCard = false;
     let lockBoard = false;
-    let firstCard, secondCard, locationX, locationY;
+    let firstCard, secondCard;
     let score = 0;
     let inc = -145;
 
@@ -132,6 +132,14 @@
             secondCard = null;
             inc = -145;
             score = 0;
+            firstCardX = null;
+            firstCardY = null;
+            secondCardX = null;
+            secondCardY = null;
+            firstCardmoveX = null;
+            firstCardmoveY = null;
+            secondCardmoveX = null;
+            secondCardmoveY = null;
             cards.forEach(card => card.addEventListener('click', flipCard));
         }      
 
