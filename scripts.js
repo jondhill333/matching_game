@@ -56,6 +56,13 @@
                 unflipCards();
             }
         }
+      
+        if(score === 8) {
+            setTimeout(() => {
+            wonMessage.innerHTML = 'YOU WON!!!';
+            }, 1800);
+        }
+    }
 
         function matchedCards() {
             lockBoard = true;
@@ -93,26 +100,18 @@
                 }, 1000);
             } else {
                 return;
-
             }
-           
         }
 
         function unflipCards() {
             lockBoard = true;
             setTimeout(() => {
-            firstCard.classList.remove("flip");
-            secondCard.classList.remove("flip");
-            newTurn();
+              firstCard.classList.remove("flip");
+              secondCard.classList.remove("flip");
+              newTurn();       
             }, 1600);
+            
          }
-        
-        if(score === 8) {
-            setTimeout(() => {
-            wonMessage.innerHTML = 'YOU WON!!!';
-            }, 1800);
-        }
-    }
         
         function newTurn() {
             hasFlippedCard = false;
@@ -130,14 +129,13 @@
 
         (function startGame(){
             mixCards();
-        })();
-          
+        })();  
+
         function newGame() {
             wonMessage.innerHTML = '';
             cards.forEach(card => {
                 card.removeAttribute('style');
             });
-
             cards.forEach(x => {
                x.classList.remove("flip"); 
             });
@@ -155,7 +153,7 @@
             secondCardmoveY = null;
             cards.forEach(card => card.addEventListener('click', flipCard));
         }      
-
+                   
     cards.forEach(card => card.addEventListener('click', flipCard));
 
     resetButton.addEventListener("click", newGame);
